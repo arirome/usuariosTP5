@@ -13,9 +13,9 @@ ctrlHome.rutaGet = async (req, res) => {
 }
 
 ctrlHome.rutaPost = async (req, res) => {
-    const {username,password} = req.body;
+    const {username,password,rol} = req.body;
     try {
-      const user= new User({username,password});
+      const user= new User({username,password,rol});
       
       await user.save();
       res.json({

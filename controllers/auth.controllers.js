@@ -8,8 +8,8 @@ const ctrlAuth={}
 
 
 ctrlAuth.login= async (req, res) => {
-    const {username, password} = req.body;
-        const usuario= await User.findOne({username, password})
+    const {username, password,rol} = req.body;
+        const usuario= await User.findOne({username, password,rol})
          //si no existe el usuario
         if (!usuario) {
 

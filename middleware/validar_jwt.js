@@ -18,6 +18,7 @@ const validar_jwt= async(req=request,res=response, next)=>{
 try {
     
     const {id}=jwt.verify(token, process.env.SECRET)
+
     console.log(id)
     const usuario= await User.findById(id)
 console.log(usuario)
