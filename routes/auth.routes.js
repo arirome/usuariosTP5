@@ -1,5 +1,6 @@
 const routerAuth = require('express').Router();
 
+//enviar informacion del usuario logueado 
 const { 
     login
  } = require('../controllers/auth.controllers');

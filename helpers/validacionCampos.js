@@ -6,6 +6,7 @@ const validarCampos = async (req, res, next) => {
     if (!errores.isEmpty()) {
         return res.status(400).json({ errores: errores.array() });
     }
+    //si no hay errores sigue con la ejecucion del programa
     next();
 };
 module.exports = {
