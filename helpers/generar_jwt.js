@@ -1,24 +1,21 @@
 
 const { token } = require("morgan")
-
 const jwt= require ('jsonwebtoken')
-const user = require("../models/user")
 
 const generar_jwt= (id= '')=>{
-
+//como quiero que trabaje con promesas hago un return de una 
    return new Promise((resolve, reject)=>{
 
-
-    const payload={
-        id
-    }
-
+    //crear lo que voy a generar en el payload
+    const payload={ id }
+   //instruccion para generar el jwt
     jwt.sign(payload, process.env.SECRET, (err, token)=>{
-        if (err) {
 
-            reject('error al generar el token')
-            
+        //si hay errores
+        if (err) {
+            reject('error al generar el token')           
         }
+        //si todo sale bien
         resolve(token)
     })
    })
