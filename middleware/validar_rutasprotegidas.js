@@ -15,7 +15,7 @@ const isadmin = (req = request, res = response, next) => {
  
     if (rol !== 'admin') {
         return res.status(401).json({
-            msg: `no es Administrador`
+            msg: `el rol que usted tiene no pertenece al de un Administrador`
         });
     }
 
@@ -39,7 +39,7 @@ const roluser = (...rol) => {
         if (!rol.includes(req.usuario.rol)) {
 
             return res.status(401).json({
-                msg: `el rol que se le asigno no esta autorizado`
+                msg: `el rol que usted tiene no esta autorizado para esta acción`
             });
   
         }
